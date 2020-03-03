@@ -1,4 +1,4 @@
 function StartConnection (){
-    this.game = UnityLoader.instantiate("gameContainer", "Build/WebGL.json");
+    this.game = UnityLoader.instantiate("unityContainer", "Build/WebGL.json");
 }
 StartConnection();

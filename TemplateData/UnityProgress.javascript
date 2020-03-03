@@ -1,24 +1,24 @@
-function UnityProgress(gameInstance, progress) {
-  if (!gameInstance.Module)
+function UnityProgress(game, progress) {
+  if (!game.Module)
     return;
-  if (!gameInstance.logo) {
-    gameInstance.logo = document.createElement("div");
-    gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
-    gameInstance.container.appendChild(gameInstance.logo);
+  if (!game.logo) {
+    game.logo = document.createElement("div");
+    game.logo.className = "logo " + game.Module.splashScreenStyle;
+    game.container.appendChild(game.logo);
   }
-  if (!gameInstance.progress) {    
-    gameInstance.progress = document.createElement("div");
-    gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
-    gameInstance.progress.empty = document.createElement("div");
-    gameInstance.progress.empty.className = "empty";
-    gameInstance.progress.appendChild(gameInstance.progress.empty);
-    gameInstance.progress.full = document.createElement("div");
-    gameInstance.progress.full.className = "full";
-    gameInstance.progress.appendChild(gameInstance.progress.full);
-    gameInstance.container.appendChild(gameInstance.progress);
+  if (!game.progress) {    
+    game.progress = document.createElement("div");
+    game.progress.className = "progress " + game.Module.splashScreenStyle;
+    game.progress.empty = document.createElement("div");
+    game.progress.empty.className = "empty";
+    game.progress.appendChild(game.progress.empty);
+    game.progress.full = document.createElement("div");
+    game.progress.full.className = "full";
+    game.progress.appendChild(game.progress.full);
+    game.container.appendChild(game.progress);
   }
-  gameInstance.progress.full.style.width = (100 * progress) + "%";
-  gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
+  game.progress.full.style.width = (100 * progress) + "%";
+  game.progress.empty.style.width = (100 * (1 - progress)) + "%";
   if (progress == 1)
-    gameInstance.logo.style.display = gameInstance.progress.style.display = "none";
+    game.logo.style.display = game.progress.style.display = "none";
 }
